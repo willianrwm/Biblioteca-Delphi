@@ -1,0 +1,519 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Empr'#233'stimo'
+  ClientHeight = 474
+  ClientWidth = 425
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 170
+    Width = 83
+    Height = 13
+    Caption = 'Pesquisar Acervo'
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 12
+    Width = 11
+    Height = 13
+    Caption = 'ID'
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 389
+    Width = 96
+    Height = 13
+    Caption = 'Data do Empr'#233'stimo'
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 335
+    Width = 77
+    Height = 13
+    Caption = 'ID do Associado'
+  end
+  object Label7: TLabel
+    Left = 124
+    Top = 389
+    Width = 91
+    Height = 13
+    Caption = 'Data de Devolu'#231#227'o'
+  end
+  object Label6: TLabel
+    Left = 112
+    Top = 335
+    Width = 63
+    Height = 13
+    Caption = 'ID do Acervo'
+  end
+  object Label8: TLabel
+    Left = 329
+    Top = 352
+    Width = 80
+    Height = 13
+    Caption = 'Data Inicio Multa'
+    Enabled = False
+  end
+  object Label5: TLabel
+    Left = 56
+    Top = 12
+    Width = 140
+    Height = 13
+    Caption = 'Pesquisar nome do associado'
+  end
+  object Label13: TLabel
+    Left = 329
+    Top = 392
+    Width = 88
+    Height = 13
+    Caption = 'ID_EMPRESTIMO1'
+    Enabled = False
+    FocusControl = DBEdit5
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 216
+    Width = 409
+    Height = 103
+    DataSource = DataSourceAcervo
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID_ACERVO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ACE_TITULO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ACE_QTDEEXEMPLAR'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ACE_DATAEDICAO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ACE_LOCALEDICAO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ACE_ISBN'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ID_EDITORA'
+        Visible = True
+      end>
+  end
+  object EditPesquisaAcervo: TEdit
+    Left = 8
+    Top = 189
+    Width = 409
+    Height = 21
+    TabOrder = 2
+  end
+  object DBGrid2: TDBGrid
+    Left = 8
+    Top = 58
+    Width = 409
+    Height = 103
+    DataSource = DataSourceAssociado
+    TabOrder = 8
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = DBGrid2CellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID_ASSOCIADO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_NOME'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_EMAIL'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_TELEFONE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_UF'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_CEP'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_BAIRRO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_NROENDERECO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_CIDADE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_RUA'
+        Visible = True
+      end>
+  end
+  object EditPesquisaAssociado: TEdit
+    Left = 56
+    Top = 31
+    Width = 361
+    Height = 21
+    TabOrder = 1
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 31
+    Width = 42
+    Height = 21
+    DataField = 'ID_EMPRESTIMO'
+    DataSource = DataSourceMaster
+    Enabled = False
+    TabOrder = 5
+  end
+  object DBEdit2: TDBEdit
+    Left = 8
+    Top = 408
+    Width = 96
+    Height = 21
+    DataField = 'EMP_DATAEMPRESTIMO'
+    DataSource = DataSourceMaster
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 8
+    Top = 352
+    Width = 77
+    Height = 21
+    DataField = 'ID_ASSOCIADO'
+    DataSource = DataSourceMaster
+    Enabled = False
+    TabOrder = 6
+  end
+  object DBEdit4: TDBEdit
+    Left = 112
+    Top = 352
+    Width = 77
+    Height = 21
+    DataField = 'ID_ACERVO'
+    DataSource = DataSourceMaster
+    Enabled = False
+    TabOrder = 7
+  end
+  object DBEdit5: TDBEdit
+    Left = 329
+    Top = 408
+    Width = 88
+    Height = 21
+    DataField = 'ID_EMPRESTIMO1'
+    DataSource = DataSourceMaster
+    Enabled = False
+    TabOrder = 9
+  end
+  object DBEdit6: TDBEdit
+    Left = 124
+    Top = 408
+    Width = 96
+    Height = 21
+    DataField = 'ITE_DATADEVOLUCAO'
+    DataSource = DataSourceMaster
+    TabOrder = 4
+  end
+  object DBEdit7: TDBEdit
+    Left = 329
+    Top = 371
+    Width = 88
+    Height = 21
+    DataField = 'DATAINICIOVIRGENCIA'
+    DataSource = DataSourceMaster
+    Enabled = False
+    TabOrder = 10
+  end
+  object DataSourceAssociado: TDataSource
+    DataSet = IBTableAssociado
+    Left = 504
+    Top = 68
+  end
+  object IBDatabase1: TIBDatabase
+    Connected = True
+    DatabaseName = 
+      'C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\FIREBIRD\BIB' +
+      'LIOTECA.FDB'
+    Params.Strings = (
+      'user_name=sysdba'
+      'password=masterkey;')
+    LoginPrompt = False
+    DefaultTransaction = IBTransaction1
+    Left = 440
+    Top = 12
+  end
+  object IBTransaction1: TIBTransaction
+    Active = True
+    DefaultDatabase = IBDatabase1
+    Left = 504
+    Top = 12
+  end
+  object IBTableAssociado: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID_ASSOCIADO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'ASS_NOME'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_EMAIL'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_TELEFONE'
+        Attributes = [faFixed]
+        DataType = ftWideString
+        Size = 14
+      end
+      item
+        Name = 'ASS_UF'
+        Attributes = [faFixed]
+        DataType = ftWideString
+        Size = 2
+      end
+      item
+        Name = 'ASS_CEP'
+        Attributes = [faFixed]
+        DataType = ftWideString
+        Size = 9
+      end
+      item
+        Name = 'ASS_BAIRRO'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_NROENDERECO'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'ASS_CIDADE'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_RUA'
+        DataType = ftWideString
+        Size = 100
+      end>
+    IndexDefs = <
+      item
+        Name = 'PK_ASSOCIADO'
+        Fields = 'ID_ASSOCIADO'
+        Options = [ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'ASSOCIADO'
+    Left = 440
+    Top = 68
+    object IBTableAssociadoID_ASSOCIADO: TIntegerField
+      FieldName = 'ID_ASSOCIADO'
+      Required = True
+    end
+    object IBTableAssociadoASS_NOME: TIBStringField
+      FieldName = 'ASS_NOME'
+      Size = 100
+    end
+    object IBTableAssociadoASS_EMAIL: TIBStringField
+      FieldName = 'ASS_EMAIL'
+      Size = 100
+    end
+    object IBTableAssociadoASS_TELEFONE: TIBStringField
+      FieldName = 'ASS_TELEFONE'
+      FixedChar = True
+      Size = 14
+    end
+    object IBTableAssociadoASS_UF: TIBStringField
+      FieldName = 'ASS_UF'
+      FixedChar = True
+      Size = 2
+    end
+    object IBTableAssociadoASS_CEP: TIBStringField
+      FieldName = 'ASS_CEP'
+      FixedChar = True
+      Size = 9
+    end
+    object IBTableAssociadoASS_BAIRRO: TIBStringField
+      FieldName = 'ASS_BAIRRO'
+      Size = 100
+    end
+    object IBTableAssociadoASS_NROENDERECO: TSmallintField
+      FieldName = 'ASS_NROENDERECO'
+    end
+    object IBTableAssociadoASS_CIDADE: TIBStringField
+      FieldName = 'ASS_CIDADE'
+      Size = 100
+    end
+    object IBTableAssociadoASS_RUA: TIBStringField
+      FieldName = 'ASS_RUA'
+      Size = 100
+    end
+  end
+  object IBTableAcervo: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID_ACERVO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'ACE_TITULO'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ACE_QTDEEXEMPLAR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'ACE_DATAEDICAO'
+        DataType = ftDate
+      end
+      item
+        Name = 'ACE_LOCALEDICAO'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ACE_ISBN'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'ID_EDITORA'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end>
+    IndexDefs = <
+      item
+        Name = 'PK_ACERVO'
+        Fields = 'ID_ACERVO'
+        Options = [ixUnique]
+      end
+      item
+        Name = 'FK_ACERVO_1'
+        Fields = 'ID_EDITORA'
+      end>
+    StoreDefs = True
+    TableName = 'ACERVO'
+    Left = 440
+    Top = 120
+  end
+  object DataSourceAcervo: TDataSource
+    DataSet = IBTableAcervo
+    Left = 504
+    Top = 120
+  end
+  object IBQuery1: TIBQuery
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    SQL.Strings = (
+      'SELECT *FROM EMPRESTIMO, ITEM_EMPRESTIMO')
+    Left = 440
+    Top = 184
+    object IBQuery1ID_EMPRESTIMO: TIntegerField
+      FieldName = 'ID_EMPRESTIMO'
+      Origin = '"EMPRESTIMO"."ID_EMPRESTIMO"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object IBQuery1EMP_DATAEMPRESTIMO: TDateField
+      FieldName = 'EMP_DATAEMPRESTIMO'
+      Origin = '"EMPRESTIMO"."EMP_DATAEMPRESTIMO"'
+    end
+    object IBQuery1ID_ASSOCIADO: TIntegerField
+      FieldName = 'ID_ASSOCIADO'
+      Origin = '"EMPRESTIMO"."ID_ASSOCIADO"'
+      Required = True
+    end
+    object IBQuery1ID_ACERVO: TIntegerField
+      FieldName = 'ID_ACERVO'
+      Origin = '"ITEM_EMPRESTIMO"."ID_ACERVO"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object IBQuery1ID_EMPRESTIMO1: TIntegerField
+      FieldName = 'ID_EMPRESTIMO1'
+      Origin = '"ITEM_EMPRESTIMO"."ID_EMPRESTIMO"'
+      Required = True
+    end
+    object IBQuery1ITE_DATADEVOLUCAO: TDateField
+      FieldName = 'ITE_DATADEVOLUCAO'
+      Origin = '"ITEM_EMPRESTIMO"."ITE_DATADEVOLUCAO"'
+    end
+    object IBQuery1DATAINICIOVIRGENCIA: TDateField
+      FieldName = 'DATAINICIOVIRGENCIA'
+      Origin = '"ITEM_EMPRESTIMO"."DATAINICIOVIRGENCIA"'
+    end
+  end
+  object DataSourceMaster: TDataSource
+    DataSet = IBQuery1
+    Left = 504
+    Top = 184
+  end
+end

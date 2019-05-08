@@ -1,0 +1,53 @@
+unit UnitEmprestimo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids, DBGrids, DB, Mask, DBCtrls, DBTables,
+  IBCustomDataSet, IBTable, IBDatabase;
+
+type
+  TFormEmprestimo = class(TForm)
+    DBGrid2: TDBGrid;
+    DataSourceAssociado: TDataSource;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    IBTable1: TIBTable;
+    procedure Button6Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure DBGrid2CellClick(Column: TColumn);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormEmprestimo: TFormEmprestimo;
+
+implementation
+
+uses UnitMulta, UnitItemEmprestimo;
+
+{$R *.dfm}
+
+procedure TFormEmprestimo.Button1Click(Sender: TObject);
+begin
+Form1.ShowModal;
+end;
+
+procedure TFormEmprestimo.Button6Click(Sender: TObject);
+begin
+FormMulta.ShowModal;
+end;
+
+procedure TFormEmprestimo.DBGrid2CellClick(Column: TColumn);
+begin
+Form1.Edit1.Text:=DBgrid2.Columns[0].Field.AsString;
+Form1.ShowModal;
+end;
+
+end.

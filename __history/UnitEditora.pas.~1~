@@ -1,0 +1,37 @@
+unit UnitEditora;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Mask, DBCtrls, DB, IBCustomDataSet, IBDatabase, IBTable,
+  ExtCtrls, Grids, DBGrids;
+
+type
+  TFormEditora = class(TForm)
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    IBTable1: TIBTable;
+    IBTransaction1: TIBTransaction;
+    DataSource1: TDataSource;
+    IBDatabase1: TIBDatabase;
+    IBTable1ID_EDITORA: TIntegerField;
+    IBTable1EDI_RAZAOSOCIAL: TIBStringField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormEditora: TFormEditora;
+
+implementation
+
+{$R *.dfm}
+
+end.

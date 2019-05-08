@@ -1,0 +1,63 @@
+unit UnitAssociado;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DBCtrls, ExtCtrls, DB, StdCtrls, Mask, DBTables, Grids, DBGrids,
+  IBCustomDataSet, IBDatabase, IBQuery, IBTable;
+
+type
+  TFormAssociado = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    IBTable1: TIBTable;
+    IBTable1ID_ASSOCIADO: TIntegerField;
+    IBTable1ASS_NOME: TIBStringField;
+    IBTable1ASS_EMAIL: TIBStringField;
+    IBTable1ASS_TELEFONE: TIBStringField;
+    IBTable1ASS_UF: TIBStringField;
+    IBTable1ASS_CEP: TIBStringField;
+    IBTable1ASS_BAIRRO: TIBStringField;
+    IBTable1ASS_NROENDERECO: TSmallintField;
+    IBTable1ASS_CIDADE: TIBStringField;
+    IBTable1ASS_RUA: TIBStringField;
+    DataSource1: TDataSource;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBEdit1: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormAssociado: TFormAssociado;
+
+implementation
+
+{$R *.dfm}
+
+end.

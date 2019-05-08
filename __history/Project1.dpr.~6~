@@ -1,0 +1,22 @@
+program Project1;
+
+uses
+  Forms,
+  UnitAssociado in 'UnitAssociado.pas' {FormAssociado},
+  UnitAcervo in 'UnitAcervo.pas' {FormAcervo},
+  UnitEmprestimo in 'UnitEmprestimo.pas' {FormEmprestimo},
+  UnitMulta in 'UnitMulta.pas' {FormMulta},
+  UnitPrincipal in 'UnitPrincipal.pas' {FormPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.CreateForm(TFormAssociado, FormAssociado);
+  Application.CreateForm(TFormAcervo, FormAcervo);
+  Application.CreateForm(TFormEmprestimo, FormEmprestimo);
+  Application.CreateForm(TFormMulta, FormMulta);
+  Application.Run;
+end.

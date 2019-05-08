@@ -1,0 +1,118 @@
+unit UnitMulta;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, Mask, DBCtrls, DBTables, Grids, DBGrids, ExtCtrls,
+  IBCustomDataSet, IBDatabase, IBTable, IBUpdateSQL, IBQuery;
+
+type
+  TFormMulta = class(TForm)
+    DBGrid1: TDBGrid;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Panel1: TPanel;
+    Label4: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Label5: TLabel;
+    Edit1: TEdit;
+    IBTableEmprestimo: TIBTable;
+    DataSource1: TDataSource;
+    IBTableEmprestimoID_ACERVO: TIntegerField;
+    IBTableEmprestimoID_EMPRESTIMO: TIntegerField;
+    IBTableEmprestimoITE_DATADEVOLUCAO: TDateField;
+    IBTableEmprestimoID_MULTA: TIntegerField;
+    DBGrid2: TDBGrid;
+    IBQuery1: TIBQuery;
+    IBUpdateSQL1: TIBUpdateSQL;
+    DataSource2: TDataSource;
+    IBQuery1ID_EMPRESTIMO: TIntegerField;
+    IBQuery1EMP_DATAEMPRESTIMO: TDateField;
+    IBQuery1ID_ASSOCIADO: TIntegerField;
+    DBGrid3: TDBGrid;
+    IBQueryMulta: TIBQuery;
+    IBUpdateSQL2: TIBUpdateSQL;
+    DataSourceMulta: TDataSource;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    IBQueryMultaID_MULTA: TIntegerField;
+    IBQueryMultaMUL_VALORMULTA: TIBBCDField;
+    IBQueryMultaMUL_QTDEEMPRESIMOACERVO: TSmallintField;
+    procedure Button2Click(Sender: TObject);
+    procedure DBEdit3Change(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMulta: TFormMulta;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormMulta.Button1Click(Sender: TObject);
+begin
+IBQueryMultaMUL_VALORMULTA.AsString := DBEdit2.Text;
+IBQueryMultaMUL_QTDEEMPRESIMOACERVO.AsString := DBEdit3.Text;
+IBQueryMulta.Post;
+IBQueryMulta.Refresh;
+end;
+
+procedure TFormMulta.Button2Click(Sender: TObject);
+begin
+FormMulta.Close;
+end;
+
+procedure TFormMulta.DBEdit3Change(Sender: TObject);
+begin
+DBEdit2.Text :=  floattostr(strtofloat(DBEdit3.text) * (3.50));
+end;
+
+procedure TFormMulta.DBGrid1CellClick(Column: TColumn);
+var datadev, sql, sql1 : string;
+begin
+DBEDit1.Text := DBGrid1.DataSource.DataSet.FieldByName('ID_MULTA').AsString;
+datadev:= DBGrid1.DataSource.DataSet.FieldByName('ITE_DATADEVOLUCAO').AsString;
+
+//==============================================================================
+sql:='SELECT * '+
+     'FROM EMPRESTIMO '+
+     'WHERE ID_EMPRESTIMO = '+ #39 + DBEdit1.Text + #39;
+
+     IBQuery1.Close;
+     IBQuery1.SQL.Clear;
+     IBQuery1.SQL.Add(sql);
+     IBQuery1.Open;
+//==============================================================================
+//==============================================================================
+sql1:='SELECT * '+
+     'FROM MULTA2 '+
+     'WHERE ID_MULTA = '+ #39 + DBEdit1.Text + #39;
+
+     IBQueryMulta.Close;
+     IBQueryMulta.SQL.Clear;
+     IBQueryMulta.SQL.Add(sql1);
+     IBQueryMulta.Open;
+     IBQueryMulta.Edit;
+//==============================================================================
+
+    if datadev < DateToStr(Date) then
+    begin
+        DBEdit3.Text := '1';
+    end
+    else
+        DBEdit3.Text := '0';
+end;
+
+end.

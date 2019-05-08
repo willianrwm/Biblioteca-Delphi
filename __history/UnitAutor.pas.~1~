@@ -1,0 +1,37 @@
+unit UnitAutor;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Mask, DBCtrls, DB, IBCustomDataSet, IBDatabase, IBTable,
+  ExtCtrls, Grids, DBGrids;
+
+type
+  TFormAutor = class(TForm)
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    IBTable1: TIBTable;
+    IBTransaction1: TIBTransaction;
+    DataSource1: TDataSource;
+    IBDatabase1: TIBDatabase;
+    IBTable1ID_AUTOR: TIntegerField;
+    IBTable1AUT_NOME: TIBStringField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormAutor: TFormAutor;
+
+implementation
+
+{$R *.dfm}
+
+end.

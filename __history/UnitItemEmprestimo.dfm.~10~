@@ -1,0 +1,578 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Empr'#233'stimo'
+  ClientHeight = 322
+  ClientWidth = 761
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 392
+    Top = 52
+    Width = 83
+    Height = 13
+    Caption = 'Pesquisar Acervo'
+    Enabled = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 52
+    Width = 140
+    Height = 13
+    Caption = 'Pesquisar nome do associado'
+    Enabled = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 9
+    Width = 11
+    Height = 13
+    Caption = 'ID'
+    Enabled = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 224
+    Width = 96
+    Height = 13
+    Caption = 'Data do empr'#233'stimo'
+    Enabled = False
+  end
+  object Label4: TLabel
+    Left = 432
+    Top = 224
+    Width = 76
+    Height = 13
+    Caption = 'ID do associado'
+    Enabled = False
+  end
+  object Label6: TLabel
+    Left = 574
+    Top = 224
+    Width = 62
+    Height = 13
+    Caption = 'ID do acervo'
+    Enabled = False
+  end
+  object Label8: TLabel
+    Left = 144
+    Top = 224
+    Width = 90
+    Height = 13
+    Caption = 'Data de devolu'#231#227'o'
+    Enabled = False
+  end
+  object Panel2: TPanel
+    Left = 8
+    Top = 214
+    Width = 251
+    Height = 53
+    TabOrder = 9
+  end
+  object Panel3: TPanel
+    Left = 8
+    Top = 273
+    Width = 353
+    Height = 41
+    TabOrder = 10
+  end
+  object Panel1: TPanel
+    Left = 400
+    Top = 214
+    Width = 289
+    Height = 53
+    TabOrder = 8
+  end
+  object DBGrid1: TDBGrid
+    Left = 392
+    Top = 98
+    Width = 361
+    Height = 103
+    DataSource = DataSourceAcervo
+    Enabled = False
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID_ACERVO'
+        Title.Caption = 'ID'
+        Width = 30
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ACE_TITULO'
+        Title.Caption = 'T'#237'tulo'
+        Width = 235
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ACE_QTDEEXEMPLAR'
+        Title.Caption = 'Exemplares'
+        Width = 60
+        Visible = True
+      end>
+  end
+  object EditPesquisaAcervo: TEdit
+    Left = 392
+    Top = 71
+    Width = 361
+    Height = 21
+    Enabled = False
+    TabOrder = 2
+  end
+  object DBGrid2: TDBGrid
+    Left = 8
+    Top = 98
+    Width = 369
+    Height = 103
+    DataSource = DataSourceAssociado
+    Enabled = False
+    TabOrder = 7
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = DBGrid2CellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID_ASSOCIADO'
+        Title.Caption = 'ID'
+        Width = 30
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ASS_NOME'
+        Title.Caption = 'Nome'
+        Width = 300
+        Visible = True
+      end>
+  end
+  object EditPesquisaAssociado: TEdit
+    Left = 8
+    Top = 71
+    Width = 369
+    Height = 21
+    Enabled = False
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 105
+    Top = 281
+    Width = 75
+    Height = 25
+    Caption = 'SALVAR'
+    Enabled = False
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 190
+    Top = 281
+    Width = 75
+    Height = 25
+    Caption = 'CANCELAR'
+    Enabled = False
+    TabOrder = 5
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 275
+    Top = 281
+    Width = 75
+    Height = 25
+    Caption = 'DEVOLVER'
+    TabOrder = 6
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 20
+    Top = 281
+    Width = 75
+    Height = 25
+    Caption = 'NOVO'
+    TabOrder = 3
+    OnClick = Button4Click
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 25
+    Width = 25
+    Height = 21
+    DataField = 'ID_EMPRESTIMO'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 11
+  end
+  object DBEdit2: TDBEdit
+    Left = 24
+    Top = 240
+    Width = 96
+    Height = 21
+    DataField = 'EMP_DATAEMPRESTIMO'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 12
+  end
+  object DBEdit3: TDBEdit
+    Left = 432
+    Top = 237
+    Width = 78
+    Height = 21
+    DataField = 'ID_ASSOCIADO'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 13
+  end
+  object DBEdit4: TDBEdit
+    Left = 574
+    Top = 237
+    Width = 78
+    Height = 21
+    DataField = 'ID_ACERVO'
+    DataSource = DataSource2
+    Enabled = False
+    TabOrder = 14
+  end
+  object DBEdit5: TDBEdit
+    Left = 46
+    Top = 25
+    Width = 27
+    Height = 21
+    DataField = 'ID_EMPRESTIMO'
+    DataSource = DataSource2
+    Enabled = False
+    TabOrder = 15
+  end
+  object DBEdit6: TDBEdit
+    Left = 144
+    Top = 240
+    Width = 96
+    Height = 21
+    DataField = 'ITE_DATADEVOLUCAO'
+    DataSource = DataSource2
+    Enabled = False
+    TabOrder = 16
+  end
+  object DataSourceAssociado: TDataSource
+    DataSet = IBTableAssociado
+    Left = 288
+    Top = 164
+  end
+  object IBDatabase1: TIBDatabase
+    Connected = True
+    DatabaseName = 
+      'C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\FIREBIRD\BIB' +
+      'LIOTECA.FDB'
+    Params.Strings = (
+      'user_name=sysdba'
+      'password=masterkey;')
+    LoginPrompt = False
+    DefaultTransaction = IBTransaction1
+    Left = 232
+    Top = 4
+  end
+  object IBTransaction1: TIBTransaction
+    Active = True
+    DefaultDatabase = IBDatabase1
+    Left = 296
+    Top = 4
+  end
+  object IBTableAssociado: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID_ASSOCIADO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'ASS_NOME'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_EMAIL'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_TELEFONE'
+        Attributes = [faFixed]
+        DataType = ftWideString
+        Size = 14
+      end
+      item
+        Name = 'ASS_UF'
+        Attributes = [faFixed]
+        DataType = ftWideString
+        Size = 2
+      end
+      item
+        Name = 'ASS_CEP'
+        Attributes = [faFixed]
+        DataType = ftWideString
+        Size = 9
+      end
+      item
+        Name = 'ASS_BAIRRO'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_NROENDERECO'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'ASS_CIDADE'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ASS_RUA'
+        DataType = ftWideString
+        Size = 100
+      end>
+    IndexDefs = <
+      item
+        Name = 'PK_ASSOCIADO'
+        Fields = 'ID_ASSOCIADO'
+        Options = [ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'ASSOCIADO'
+    Left = 256
+    Top = 164
+    object IBTableAssociadoID_ASSOCIADO: TIntegerField
+      FieldName = 'ID_ASSOCIADO'
+      Required = True
+    end
+    object IBTableAssociadoASS_NOME: TIBStringField
+      FieldName = 'ASS_NOME'
+      Size = 100
+    end
+    object IBTableAssociadoASS_EMAIL: TIBStringField
+      FieldName = 'ASS_EMAIL'
+      Size = 100
+    end
+    object IBTableAssociadoASS_TELEFONE: TIBStringField
+      FieldName = 'ASS_TELEFONE'
+      FixedChar = True
+      Size = 14
+    end
+    object IBTableAssociadoASS_UF: TIBStringField
+      FieldName = 'ASS_UF'
+      FixedChar = True
+      Size = 2
+    end
+    object IBTableAssociadoASS_CEP: TIBStringField
+      FieldName = 'ASS_CEP'
+      FixedChar = True
+      Size = 9
+    end
+    object IBTableAssociadoASS_BAIRRO: TIBStringField
+      FieldName = 'ASS_BAIRRO'
+      Size = 100
+    end
+    object IBTableAssociadoASS_NROENDERECO: TSmallintField
+      FieldName = 'ASS_NROENDERECO'
+    end
+    object IBTableAssociadoASS_CIDADE: TIBStringField
+      FieldName = 'ASS_CIDADE'
+      Size = 100
+    end
+    object IBTableAssociadoASS_RUA: TIBStringField
+      FieldName = 'ASS_RUA'
+      Size = 100
+    end
+  end
+  object IBTableAcervo: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID_ACERVO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'ACE_TITULO'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ACE_QTDEEXEMPLAR'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'ACE_DATAEDICAO'
+        DataType = ftDate
+      end
+      item
+        Name = 'ACE_LOCALEDICAO'
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'ACE_ISBN'
+        DataType = ftSmallint
+      end
+      item
+        Name = 'ID_EDITORA'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end>
+    IndexDefs = <
+      item
+        Name = 'PK_ACERVO'
+        Fields = 'ID_ACERVO'
+        Options = [ixUnique]
+      end
+      item
+        Name = 'FK_ACERVO_1'
+        Fields = 'ID_EDITORA'
+      end>
+    StoreDefs = True
+    TableName = 'ACERVO'
+    Left = 600
+    Top = 160
+  end
+  object DataSourceAcervo: TDataSource
+    DataSet = IBTableAcervo
+    Left = 624
+    Top = 160
+  end
+  object IBTableEmprestimo: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID_EMPRESTIMO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'EMP_DATAEMPRESTIMO'
+        DataType = ftDate
+      end
+      item
+        Name = 'ID_ASSOCIADO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end>
+    IndexDefs = <
+      item
+        Name = 'PK_EMPRESTIMO'
+        Fields = 'ID_EMPRESTIMO'
+        Options = [ixUnique]
+      end
+      item
+        Name = 'FK_EMPRESTIMO_1'
+        Fields = 'ID_ASSOCIADO'
+      end>
+    StoreDefs = True
+    TableName = 'EMPRESTIMO'
+    Left = 400
+    Top = 8
+    object IBTableEmprestimoID_EMPRESTIMO: TIntegerField
+      FieldName = 'ID_EMPRESTIMO'
+      Required = True
+    end
+    object IBTableEmprestimoEMP_DATAEMPRESTIMO: TDateField
+      FieldName = 'EMP_DATAEMPRESTIMO'
+    end
+    object IBTableEmprestimoID_ASSOCIADO: TIntegerField
+      FieldName = 'ID_ASSOCIADO'
+      Required = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = IBTableEmprestimo
+    Left = 440
+  end
+  object DataSource2: TDataSource
+    Left = 592
+  end
+  object IBTable1: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'ID_ACERVO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_EMPRESTIMO'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'ITE_DATADEVOLUCAO'
+        DataType = ftDate
+      end
+      item
+        Name = 'DATAINICIOVIRGENCIA'
+        DataType = ftDate
+      end>
+    IndexDefs = <
+      item
+        Name = 'PK_ITEM_EMPRESTIMO'
+        Fields = 'ID_ACERVO;ID_EMPRESTIMO'
+        Options = [ixUnique]
+      end
+      item
+        Name = 'FK_ITEM_EMPRESTIMO_1'
+        Fields = 'ID_ACERVO'
+      end
+      item
+        Name = 'FK_ITEM_EMPRESTIMO_2'
+        Fields = 'ID_EMPRESTIMO'
+      end
+      item
+        Name = 'FK_ITEM_EMPRESTIMO_3'
+        Fields = 'ID_MULTA'
+      end>
+    StoreDefs = True
+    TableName = 'ITEM_EMPRESTIMO'
+    Left = 560
+    Top = 8
+    object IBTable1ID_ACERVO: TIntegerField
+      FieldName = 'ID_ACERVO'
+      Required = True
+    end
+    object IBTable1ID_EMPRESTIMO: TIntegerField
+      FieldName = 'ID_EMPRESTIMO'
+      Required = True
+    end
+    object IBTable1ITE_DATADEVOLUCAO: TDateField
+      FieldName = 'ITE_DATADEVOLUCAO'
+    end
+    object IBTable1DATAINICIOVIRGENCIA: TDateField
+      FieldName = 'DATAINICIOVIRGENCIA'
+    end
+  end
+end

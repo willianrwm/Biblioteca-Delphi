@@ -1,0 +1,46 @@
+unit UnitMulta;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, Mask, DBCtrls, DBTables, Grids, DBGrids;
+
+type
+  TFormMulta = class(TForm)
+    DatabaseMulta: TDatabase;
+    TableMulta: TTable;
+    TableMultaDataInicio: TDateField;
+    TableMultaMul_Valor: TCurrencyField;
+    TableMultaMul_QtdeEmprestimo: TFloatField;
+    TableMultaMul_PrazoDevolucao: TFloatField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSourceMulta: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Button1: TButton;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    DBGrid1: TDBGrid;
+    Table1: TTable;
+    Table1Ace_ID: TIntegerField;
+    Table1Emp_ID: TIntegerField;
+    Table1DataDevolucao: TDateField;
+    Table1DataInicio: TDateField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMulta: TFormMulta;
+
+implementation
+
+{$R *.dfm}
+
+end.

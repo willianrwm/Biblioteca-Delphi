@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/05/13 19:17:46.000.032,=C:\Users\Karpa\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/05/13 19:34:47.000.252,=C:\Users\Karpa\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/06/01 20:57:56.000.143,=C:\Users\Karpa\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/06/01 21:15:27.000.159,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitAssociado.pas=C:\Users\Karpa\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/06/01 21:15:27.000.159,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitAssociado.dfm=C:\Users\Karpa\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2015/06/01 21:15:34.000.695,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Project1.dproj=C:\Users\Karpa\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2015/06/01 21:20:02.000.884,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas</Transaction>
+    <Transaction>2015/06/01 21:36:40.000.749,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitAcervo.pas</Transaction>
+    <Transaction>2015/06/01 21:36:40.000.749,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitAcervo.dfm</Transaction>
+    <Transaction>2015/06/01 21:41:03.000.284,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas</Transaction>
+    <Transaction>2015/06/01 21:57:55.000.531,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEmprestimo.dfm</Transaction>
+    <Transaction>2015/06/01 21:57:55.000.531,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEmprestimo.pas</Transaction>
+    <Transaction>2015/06/01 22:03:14.000.713,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas</Transaction>
+    <Transaction>2015/06/01 22:14:12.000.549,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitMulta.pas</Transaction>
+    <Transaction>2015/06/01 22:14:12.000.549,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitMulta.dfm</Transaction>
+    <Transaction>2015/06/02 21:41:41.000.525,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas</Transaction>
+    <Transaction>2015/06/02 21:47:56.000.403,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitPrincipal.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas</Transaction>
+    <Transaction>2015/06/02 21:47:56.000.412,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitPrincipal.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.dfm</Transaction>
+    <Transaction>2015/06/02 22:27:48.000.863,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas</Transaction>
+    <Transaction>2015/06/03 04:43:26.000.893,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitItemEmprestimo.pas</Transaction>
+    <Transaction>2015/06/03 04:43:26.000.893,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit1.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitItemEmprestimo.dfm</Transaction>
+    <Transaction>2015/06/16 22:33:35.000.080,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEmprestimo.pas=</Transaction>
+    <Transaction>2015/06/17 00:40:07.000.977,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Project1.dproj=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Project1.dproj</Transaction>
+    <Transaction>2015/06/17 00:45:58.000.120,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.pas</Transaction>
+    <Transaction>2015/06/17 00:46:23.000.761,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEmprestimo.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.dfm</Transaction>
+    <Transaction>2015/06/17 00:46:23.000.761,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEmprestimo.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.pas</Transaction>
+    <Transaction>2015/06/17 03:09:22.000.218,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.pas</Transaction>
+    <Transaction>2015/06/17 03:17:59.000.904,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitAutor.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.dfm</Transaction>
+    <Transaction>2015/06/17 03:17:59.000.904,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitAutor.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.pas</Transaction>
+    <Transaction>2015/06/17 03:18:11.000.230,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.pas</Transaction>
+    <Transaction>2015/06/17 03:48:43.000.750,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEditora.pas=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.pas</Transaction>
+    <Transaction>2015/06/17 03:48:43.000.750,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEditora.dfm=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.dfm</Transaction>
+    <Transaction>2015/06/17 03:55:30.000.722,C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\UnitEmprestimo.pas=</Transaction>
+    <Transaction>2015/06/21 18:24:18.000.565,=C:\Users\Karpa\Documents\RAD Studio\Proj_Biblioteca\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

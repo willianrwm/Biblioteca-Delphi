@@ -1,0 +1,195 @@
+unit UnitItemEmprestimo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Mask, DBCtrls, DB, StdCtrls, Grids, DBGrids, DBTables, ExtCtrls,
+  IBCustomDataSet, IBTable, IBDatabase, IBQuery, IBUpdateSQL;
+
+type
+  TForm1 = class(TForm)
+    DBGrid1: TDBGrid;
+    EditPesquisaAcervo: TEdit;
+    Label1: TLabel;
+    Label5: TLabel;
+    DBGrid2: TDBGrid;
+    DataSourceAssociado: TDataSource;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    IBTableAssociado: TIBTable;
+    IBTableAssociadoID_ASSOCIADO: TIntegerField;
+    IBTableAssociadoASS_NOME: TIBStringField;
+    IBTableAssociadoASS_EMAIL: TIBStringField;
+    IBTableAssociadoASS_TELEFONE: TIBStringField;
+    IBTableAssociadoASS_UF: TIBStringField;
+    IBTableAssociadoASS_CEP: TIBStringField;
+    IBTableAssociadoASS_BAIRRO: TIBStringField;
+    IBTableAssociadoASS_NROENDERECO: TSmallintField;
+    IBTableAssociadoASS_CIDADE: TIBStringField;
+    IBTableAssociadoASS_RUA: TIBStringField;
+    IBTableAcervo: TIBTable;
+    DataSourceAcervo: TDataSource;
+    EditPesquisaAssociado: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label6: TLabel;
+    Label8: TLabel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    IBTableEmprestimo: TIBTable;
+    IBTableEmprestimoID_EMPRESTIMO: TIntegerField;
+    IBTableEmprestimoEMP_DATAEMPRESTIMO: TDateField;
+    IBTableEmprestimoID_ASSOCIADO: TIntegerField;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DataSource2: TDataSource;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    IBTable1: TIBTable;
+    IBTable1ID_ACERVO: TIntegerField;
+    IBTable1ID_EMPRESTIMO: TIntegerField;
+    IBTable1ITE_DATADEVOLUCAO: TDateField;
+    IBTable1DATAINICIOVIRGENCIA: TDateField;
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure DBGrid2CellClick(Column: TColumn);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses UnitMulta;
+
+{$R *.dfm}
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+idemprestimo, dataemp, idassociado, idacervo, idemprestimo1, datadevol, datamult :string;
+begin
+
+idemprestimo := DBedit1.Text;
+dataemp := DBedit2.Text;
+idassociado := DBedit3.Text;
+idacervo := DBedit4.Text;
+idemprestimo1 := DBedit5.Text;
+datadevol := DBedit6.Text;
+
+if ((idemprestimo<>'') AND (dataemp<>'') AND (idassociado<>'') AND (idacervo<>'')
+   AND (idemprestimo1<>'') AND (datadevol<>'') AND (datamult<>'')) then
+     begin
+     IBTableEmprestimoID_EMPRESTIMO.AsString := idemprestimo;
+     IBTableEmprestimoEMP_DATAEMPRESTIMO.AsString := dataemp;
+     IBTableEmprestimoID_ASSOCIADO.AsString := idassociado;
+     IBTableItemID_ACERVO.AsString := idacervo;
+     IBTableItemID_EMPRESTIMO.AsString := idemprestimo1;
+     IBTableItemITE_DATADEVOLUCAO.AsString := datadevol;
+     IBTableItemDATAINICIOVIRGENCIA := datamult;
+
+     IBTableEmprestimo.Post;
+     IBTableEmprestimo.Refresh;
+     IBTableItem.Post;
+     IBTableItem.Refresh;
+
+DBGrid1.Enabled := False;
+DBGrid2.Enabled := False;
+Label1.Enabled := False;
+Label3.Enabled := False;
+Label5.Enabled := False;
+Label8.Enabled := False;
+Button1.Enabled := False;
+Button2.Enabled := False;
+Button3.Enabled := True;
+Button4.Enabled := True;
+DBEdit2.Enabled := False;
+DBEdit6.Enabled := False;
+editpesquisaassociado.Enabled := False;
+editpesquisaacervo.Enabled := False;
+
+     end
+        else
+                MessageDlg('Informe todos os campos!',mtCustom,[mbOK], 0);
+
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+DBGrid1.Enabled := False;
+DBGrid2.Enabled := False;
+Label1.Enabled := False;
+Label3.Enabled := False;
+Label5.Enabled := False;
+Label8.Enabled := False;
+Button1.Enabled := False;
+Button2.Enabled := False;
+Button3.Enabled := True;
+Button4.Enabled := True;
+DBEdit2.Enabled := False;
+DBEdit6.Enabled := False;
+editpesquisaassociado.Enabled := False;
+editpesquisaacervo.Enabled := False;
+
+IBTableEmprestimo.Cancel;
+IBTableItem.Cancel;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+FormMulta.ShowModal();
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+DBGrid1.Enabled := True;
+DBGrid2.Enabled := True;
+Label1.Enabled := True;
+Label2.Enabled := True;
+Label3.Enabled := True;
+Label5.Enabled := True;
+Label8.Enabled := True;
+Button1.Enabled := True;
+Button2.Enabled := True;
+Button3.Enabled := False;
+Button4.Enabled := False;
+DBEdit2.Enabled := True;
+DBEdit6.Enabled := True;
+editpesquisaassociado.Enabled := True;
+editpesquisaacervo.Enabled := True;
+
+IBTableEmprestimo.Insert;
+IBTableItem.Insert;
+end;
+
+procedure TForm1.DBGrid1CellClick(Column: TColumn);
+begin
+DBEdit4.Text:=DBgrid1.Columns[0].Field.AsString;
+end;
+
+procedure TForm1.DBGrid2CellClick(Column: TColumn);
+begin
+DBEdit3.Text:=DBgrid2.Columns[0].Field.AsString;
+end;
+
+
+
+end.

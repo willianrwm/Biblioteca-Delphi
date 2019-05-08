@@ -1,0 +1,247 @@
+object FormEmprestimo: TFormEmprestimo
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Empr'#233'stimo'
+  ClientHeight = 335
+  ClientWidth = 672
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 48
+    Width = 63
+    Height = 13
+    Caption = 'ID do Acervo'
+    FocusControl = DBEdit1
+  end
+  object Label3: TLabel
+    Left = 144
+    Top = 245
+    Width = 91
+    Height = 13
+    Caption = 'Data de Devolu'#231#227'o'
+    FocusControl = DBEdit3
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 0
+    Width = 11
+    Height = 13
+    Caption = 'ID'
+    FocusControl = DBEdit2
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 245
+    Width = 96
+    Height = 13
+    Caption = 'Data de Empr'#233'stimo'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 344
+    Top = 48
+    Width = 77
+    Height = 13
+    Caption = 'ID do Associado'
+    FocusControl = DBEdit6
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 64
+    Width = 63
+    Height = 21
+    DataField = 'Ace_ID'
+    DataSource = DataSourceItemEmprestimo
+    TabOrder = 0
+  end
+  object DBEdit3: TDBEdit
+    Left = 144
+    Top = 264
+    Width = 96
+    Height = 21
+    DataField = 'DataDevolucao'
+    DataSource = DataSourceItemEmprestimo
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 8
+    Top = 16
+    Width = 63
+    Height = 21
+    DataField = 'Emp_ID'
+    DataSource = DataSourceEmprestimo
+    Enabled = False
+    TabOrder = 2
+  end
+  object DBEdit5: TDBEdit
+    Left = 8
+    Top = 264
+    Width = 96
+    Height = 21
+    DataField = 'Emp_DataEmprestimo'
+    DataSource = DataSourceEmprestimo
+    TabOrder = 3
+  end
+  object DBEdit6: TDBEdit
+    Left = 344
+    Top = 64
+    Width = 63
+    Height = 21
+    DataField = 'Ass_ID'
+    DataSource = DataSourceEmprestimo
+    TabOrder = 4
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 91
+    Width = 320
+    Height = 120
+    DataSource = DataSourceAcervo
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBGrid2: TDBGrid
+    Left = 344
+    Top = 91
+    Width = 320
+    Height = 120
+    DataSource = DataSourceAssociado
+    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button2: TButton
+    Left = 96
+    Top = 304
+    Width = 75
+    Height = 25
+    Caption = 'Devolver'
+    TabOrder = 7
+  end
+  object Button3: TButton
+    Left = 273
+    Top = 304
+    Width = 75
+    Height = 25
+    Caption = 'Limpar'
+    TabOrder = 8
+  end
+  object Button4: TButton
+    Left = 361
+    Top = 304
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    TabOrder = 9
+  end
+  object Button5: TButton
+    Left = 184
+    Top = 304
+    Width = 75
+    Height = 25
+    Caption = 'Salvar'
+    TabOrder = 10
+  end
+  object Button6: TButton
+    Left = 273
+    Top = 262
+    Width = 163
+    Height = 25
+    Caption = 'Gerar Multa'
+    TabOrder = 11
+    OnClick = Button6Click
+  end
+  object DatabaseEmprestimo: TDatabase
+    AliasName = 'BIBLIOTECA'
+    Connected = True
+    DatabaseName = 'DbEmprestimo'
+    SessionName = 'Default'
+    Left = 776
+    Top = 24
+  end
+  object TableItemEmprestimo: TTable
+    Active = True
+    DatabaseName = 'DbEmprestimo'
+    TableName = 'tbItemEmprestimo.DB'
+    Left = 776
+    Top = 72
+    object TableItemEmprestimoAce_ID: TIntegerField
+      FieldName = 'Ace_ID'
+    end
+    object TableItemEmprestimoEmp_ID: TIntegerField
+      FieldName = 'Emp_ID'
+    end
+    object TableItemEmprestimoDataDevolucao: TDateField
+      FieldName = 'DataDevolucao'
+    end
+    object TableItemEmprestimoDataInicio: TDateField
+      FieldName = 'DataInicio'
+    end
+  end
+  object DataSourceItemEmprestimo: TDataSource
+    DataSet = TableItemEmprestimo
+    Left = 776
+    Top = 120
+  end
+  object TableEmprestimo: TTable
+    Active = True
+    DatabaseName = 'DbEmprestimo'
+    TableName = 'tbEmprestimo.db'
+    Left = 776
+    Top = 168
+    object TableEmprestimoEmp_ID: TAutoIncField
+      FieldName = 'Emp_ID'
+      ReadOnly = True
+    end
+    object TableEmprestimoEmp_DataEmprestimo: TDateField
+      FieldName = 'Emp_DataEmprestimo'
+    end
+    object TableEmprestimoAss_ID: TIntegerField
+      FieldName = 'Ass_ID'
+    end
+  end
+  object DataSourceEmprestimo: TDataSource
+    DataSet = TableEmprestimo
+    Left = 776
+    Top = 216
+  end
+  object DataSourceAcervo: TDataSource
+    DataSet = TableAcervo
+    Left = 480
+    Top = 296
+  end
+  object DataSourceAssociado: TDataSource
+    DataSet = TableAssociado
+    Left = 584
+    Top = 296
+  end
+  object TableAcervo: TTable
+    Active = True
+    DatabaseName = 'DbEmprestimo'
+    TableName = 'tbAcervo.DB'
+    Left = 480
+    Top = 248
+  end
+  object TableAssociado: TTable
+    Active = True
+    DatabaseName = 'DbEmprestimo'
+    TableName = 'tbAssociado.db'
+    Left = 584
+    Top = 248
+  end
+end

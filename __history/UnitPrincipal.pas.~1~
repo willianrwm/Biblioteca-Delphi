@@ -1,0 +1,35 @@
+unit UnitPrincipal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TFormPrincipal = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPrincipal: TFormPrincipal;
+
+implementation
+
+uses UnitAssociado, UnitAcervo, UnitEmprestimo, UnitMulta;
+
+{$R *.dfm}
+
+procedure TFormPrincipal.Button1Click(Sender: TObject);
+begin
+TFormAssociado.Show;
+end;
+
+end.

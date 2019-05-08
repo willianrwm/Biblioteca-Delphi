@@ -1,0 +1,133 @@
+unit UnitAssociado;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DBCtrls, ExtCtrls, DB, StdCtrls, Mask, DBTables, Grids, DBGrids,
+  IBCustomDataSet, IBDatabase, IBQuery, IBTable;
+
+type
+  TFormAssociado = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    DBGrid1: TDBGrid;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    IBTable1: TIBTable;
+    IBTable1ID_ASSOCIADO: TIntegerField;
+    IBTable1ASS_NOME: TIBStringField;
+    IBTable1ASS_EMAIL: TIBStringField;
+    IBTable1ASS_TELEFONE: TIBStringField;
+    IBTable1ASS_UF: TIBStringField;
+    IBTable1ASS_CEP: TIBStringField;
+    IBTable1ASS_BAIRRO: TIBStringField;
+    IBTable1ASS_NROENDERECO: TSmallintField;
+    IBTable1ASS_CIDADE: TIBStringField;
+    IBTable1ASS_RUA: TIBStringField;
+    DataSource1: TDataSource;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBEdit1: TDBEdit;
+    IBQuery1: TIBQuery;
+    IBQuery1ID_ASSOCIADO: TIntegerField;
+    Label11: TLabel;
+    DBEdit11: TDBEdit;
+    DataSource2: TDataSource;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button7: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormAssociado: TFormAssociado;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormAssociado.Button1Click(Sender: TObject);
+begin
+IBTable1.Insert;
+end;
+
+procedure TFormAssociado.Button2Click(Sender: TObject);
+var
+id, nome, email, telefone, uf, cep, bairro, numero, cidade, rua :string;
+begin
+     id:= Edit8.Text;
+     nome:= Edit1.Text;
+     email:= Edit2.Text;
+     telefone:= datetostr(DateTimePicker1.Date);
+     uf:= Edit6.Text;
+     cep:= Edit7.Text;
+     bairro:= Edit4.Text;
+     numero:= EditTemp.Text;
+     cidade:= EditTemp.Text;
+     rua:= EditTemp.Text;
+
+     if ((id<>'') AND (nome<>'') AND (email<>'') AND (telefone<>'') AND (uf<>'')
+     AND (cep<>'') AND (bairro<>'') AND (numero<>'') AND (cidade<>'') AND (rua<>''))
+     then
+     begin
+
+     IBTable1ID_ASSOCIADO.AsString := id;
+     IBTable1ASS_NOME.AsString := nome;
+     IBTable1ASS_EMAIL.AsString := email;
+     IBTable1ASS_TELEFONE.AsString := telefone;
+     IBTable1ASS_UF.AsString := uf;
+     IBTable1ASS_CEP.AsString := cep;
+     IBTable1ASS_BAIRRO.AsString := bairro;
+     IBTable1ASS_NROENDERECO.AsString := numero;
+     IBTable1ASS_CIDADE.AsString := cidade;
+     IBTable1ASS_RUA.AsString := rua;
+
+     IBTable1.Post;
+     IBTable1.Refresh;
+     end;
+end;
+
+procedure TFormAssociado.Button3Click(Sender: TObject);
+begin
+IBTable1.Edit;
+end;
+
+procedure TFormAssociado.Button4Click(Sender: TObject);
+begin
+IBTable1.Cancel;
+end;
+
+procedure TFormAssociado.Button7Click(Sender: TObject);
+begin
+IBTable1.Delete;
+end;
+
+end.

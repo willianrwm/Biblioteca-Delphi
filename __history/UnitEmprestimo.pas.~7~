@@ -1,0 +1,61 @@
+unit UnitEmprestimo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids, DBGrids, DB, Mask, DBCtrls, DBTables;
+
+type
+  TFormEmprestimo = class(TForm)
+    DatabaseEmprestimo: TDatabase;
+    DBGrid2: TDBGrid;
+    DataSourceAssociado: TDataSource;
+    TableAssociado: TTable;
+    TableAssociadoAss_ID: TAutoIncField;
+    TableAssociadoAss_Nome: TStringField;
+    TableAssociadoAss_Email: TStringField;
+    TableAssociadoAss_Telefone: TFloatField;
+    TableAssociadoAss_UF: TStringField;
+    TableAssociadoAss_CEP: TFloatField;
+    TableAssociadoAss_Bairro: TStringField;
+    TableAssociadoAss_NroEndereco: TFloatField;
+    TableAssociadoAss_Cidade: TStringField;
+    TableAssociadoAss_Rua: TStringField;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    procedure Button6Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure DBGrid2CellClick(Column: TColumn);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormEmprestimo: TFormEmprestimo;
+
+implementation
+
+uses UnitMulta, UnitItemEmprestimo;
+
+{$R *.dfm}
+
+procedure TFormEmprestimo.Button1Click(Sender: TObject);
+begin
+Form1.ShowModal;
+end;
+
+procedure TFormEmprestimo.Button6Click(Sender: TObject);
+begin
+FormMulta.ShowModal;
+end;
+
+procedure TFormEmprestimo.DBGrid2CellClick(Column: TColumn);
+begin
+Form1.Edit1.Text:=DBgrid2.Columns[0].Field.AsString;
+Form1.ShowModal;
+end;
+
+end.

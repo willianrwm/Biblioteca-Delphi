@@ -1,0 +1,52 @@
+unit UnitItemEmprestimo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Mask, DBCtrls, DB, StdCtrls, Grids, DBGrids, DBTables, ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    DatabaseItemEmprestimo: TDatabase;
+    TableAcervo: TTable;
+    DBGrid1: TDBGrid;
+    DataSourceAcervo: TDataSource;
+    EditPesquisaAcervo: TEdit;
+    Label1: TLabel;
+    TableEmprestimo: TTable;
+    TableEmprestimoEmp_ID: TAutoIncField;
+    TableEmprestimoEmp_DataEmprestimo: TDateField;
+    TableEmprestimoAss_ID: TIntegerField;
+    Label2: TLabel;
+    DBEdit1: TDBEdit;
+    DataSourceEmprestimo: TDataSource;
+    Label3: TLabel;
+    DBEdit2: TDBEdit;
+    Label4: TLabel;
+    DBEdit3: TDBEdit;
+    TableItemEmprestimo: TTable;
+    TableItemEmprestimoAce_ID: TIntegerField;
+    TableItemEmprestimoEmp_ID: TIntegerField;
+    TableItemEmprestimoDataDevolucao: TDateField;
+    TableItemEmprestimoDataInicio: TDateField;
+    DataSourceItemEmprestimo: TDataSource;
+    Label7: TLabel;
+    DBEdit6: TDBEdit;
+    Label5: TLabel;
+    DBGrid2: TDBGrid;
+    DBNavigator1: TDBNavigator;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

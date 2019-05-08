@@ -1,0 +1,84 @@
+unit UnitItemEmprestimo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Mask, DBCtrls, DB, StdCtrls, Grids, DBGrids, DBTables, ExtCtrls,
+  IBCustomDataSet, IBTable, IBDatabase, IBQuery;
+
+type
+  TForm1 = class(TForm)
+    DBGrid1: TDBGrid;
+    EditPesquisaAcervo: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label7: TLabel;
+    Label6: TLabel;
+    Label8: TLabel;
+    DBNavigator1: TDBNavigator;
+    Label5: TLabel;
+    DBGrid2: TDBGrid;
+    DataSourceAssociado: TDataSource;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    IBTableAssociado: TIBTable;
+    IBTableAssociadoID_ASSOCIADO: TIntegerField;
+    IBTableAssociadoASS_NOME: TIBStringField;
+    IBTableAssociadoASS_EMAIL: TIBStringField;
+    IBTableAssociadoASS_TELEFONE: TIBStringField;
+    IBTableAssociadoASS_UF: TIBStringField;
+    IBTableAssociadoASS_CEP: TIBStringField;
+    IBTableAssociadoASS_BAIRRO: TIBStringField;
+    IBTableAssociadoASS_NROENDERECO: TSmallintField;
+    IBTableAssociadoASS_CIDADE: TIBStringField;
+    IBTableAssociadoASS_RUA: TIBStringField;
+    IBTableAcervo: TIBTable;
+    DataSourceAcervo: TDataSource;
+    EditPesquisaAssociado: TEdit;
+    IBQuery1: TIBQuery;
+    DataSourceMaster: TDataSource;
+    IBQuery1ID_EMPRESTIMO: TIntegerField;
+    IBQuery1EMP_DATAEMPRESTIMO: TDateField;
+    IBQuery1ID_ASSOCIADO: TIntegerField;
+    IBQuery1ID_ACERVO: TIntegerField;
+    IBQuery1ID_EMPRESTIMO1: TIntegerField;
+    IBQuery1ITE_DATADEVOLUCAO: TDateField;
+    IBQuery1DATAINICIOVIRGENCIA: TDateField;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    Label13: TLabel;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure DBGrid2CellClick(Column: TColumn);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.DBGrid1CellClick(Column: TColumn);
+begin
+DBEdit4.Text:=DBgrid1.Columns[0].Field.AsString;
+end;
+
+procedure TForm1.DBGrid2CellClick(Column: TColumn);
+begin
+DBEdit3.Text:=DBgrid2.Columns[0].Field.AsString;
+end;
+
+end.

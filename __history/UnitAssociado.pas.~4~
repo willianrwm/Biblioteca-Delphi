@@ -1,0 +1,61 @@
+unit UnitAssociado;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DBCtrls, ExtCtrls, DB, StdCtrls, Mask, DBTables, Grids, DBGrids;
+
+type
+  TFormAssociado = class(TForm)
+    DbAssociado: TDatabase;
+    TableAssociado: TTable;
+    TableAssociadoAss_ID: TAutoIncField;
+    TableAssociadoAss_Nome: TStringField;
+    TableAssociadoAss_Email: TStringField;
+    TableAssociadoAss_Telefone: TFloatField;
+    TableAssociadoAss_UF: TStringField;
+    TableAssociadoAss_CEP: TFloatField;
+    TableAssociadoAss_Bairro: TStringField;
+    TableAssociadoAss_NroEndereco: TFloatField;
+    TableAssociadoAss_Cidade: TStringField;
+    TableAssociadoAss_Rua: TStringField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSourceAssociado: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Label9: TLabel;
+    DBEdit9: TDBEdit;
+    Label10: TLabel;
+    DBEdit10: TDBEdit;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormAssociado: TFormAssociado;
+
+implementation
+
+{$R *.dfm}
+
+end.
