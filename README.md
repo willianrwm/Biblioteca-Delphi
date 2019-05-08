@@ -2,4 +2,11 @@
 
 -Utiliza banco de dados Firebird<br>
 -Possuí módulos:<br>
-<t> cadastro de empréstimos, cadastro de acervo, cadastro de associados, empréstimo, devolução, sistema de multas.
+<ul>
+	<li>Cadastro de empréstimos</li>
+	<li>Cadastro de acervo</li>
+	<li>Cadastro de associados</li>
+	<li>Empréstimo</li>
+	<li>Devolução</li>
+	<li>Sistema de multas</li>
+</ul>
