@@ -1,4 +1,4 @@
-# Sistema para Biblioteca em Pascal
+# Sistema para gestão bibliotecária em Pascal
 
 -Utiliza banco de dados Firebird<br>
 -Possuí módulos:<br>
